@@ -29,7 +29,7 @@ function dolaresHoy(data) {
 
     }
     console.log(Dolars)
-    let oficial = [document.getElementById('formularioDolarOficial').placeholder = (Dolars.oficial), document.getElementById('formularioDolarOficial2').placeholder = (Dolars.oficial)]
+    let oficial = [document.getElementById('formularioDolarOficial').placeholder =(Dolars.oficial), document.getElementById('formularioDolarOficial2').placeholder = (Dolars.oficial)]
     let blue = [document.getElementById('formularioDolarBlue').placeholder = (Dolars.blue), document.getElementById('formularioDolarBlue2').placeholder = (Dolars.blue)]
     let tarjeta = [document.getElementById('formularioDolarTarjeta').placeholder = (Dolars.tarjeta), document.getElementById('formularioDolarTarjeta2').placeholder = (Dolars.tarjeta)]
     let turista = [document.getElementById('formularioDolarTurista').placeholder = (Dolars.turista), document.getElementById('formularioDolarTurista2').placeholder = (Dolars.turista)]
