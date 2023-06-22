@@ -111,7 +111,7 @@ function blue2() {
         alert("Error de formato")
     } else {
         let blue = document.getElementById('formularioDolarBlue2').placeholder
-        document.getElementById('resultadoDolarBlue2').innerHTML = (Math.floor(dolarBlueInput / parseInt(blue)) + '$')
+        document.getElementById('resultadoDolarBlue2').innerHTML = ((dolarBlueInput / parseInt(blue)).toFixed(2) + '$')
     }
 }
 function oficial2() {
@@ -120,7 +120,7 @@ function oficial2() {
         alert("Error de formato")
     } else {
         let oficial = document.getElementById('formularioDolarOficial2').placeholder
-        document.getElementById('resultadoDolarOficial2').innerHTML = Math.floor((dolarOficialInput / parseInt(oficial))) + '$'
+        document.getElementById('resultadoDolarOficial2').innerHTML = ((dolarOficialInput / parseInt(oficial))).toFixed(2) + '$'
     }
 }
 
@@ -130,7 +130,7 @@ function tarjeta2() {
         alert("Error de formato")
     } else {
         let tarjeta = document.getElementById("formularioDolarTarjeta2").placeholder
-        document.getElementById('resultadoDolarTarjeta2').innerHTML = Math.floor((dolarTarjetaInput / parseInt(tarjeta))) + "$"
+        document.getElementById('resultadoDolarTarjeta2').innerHTML = ((dolarTarjetaInput / parseInt(tarjeta))).toFixed(2) + "$"
     }
 }
 
@@ -140,7 +140,7 @@ function turista2() {
         alert("Error de formato")
     } else {
         let turista = document.getElementById("formularioDolarTurista2").placeholder
-        document.getElementById('resultadoDolarTurista2').innerHTML = Math.floor((dolarTuristaInput / parseInt(turista))) + "$"
+        document.getElementById('resultadoDolarTurista2').innerHTML = ((dolarTuristaInput / parseInt(turista))).toFixed(2) + "$"
     }
 }
 
@@ -150,7 +150,7 @@ function mayorista2() {
         alert('Error de formato')
     } else {
         let mayorista = document.getElementById("formularioDolarMayorista2").placeholder
-        document.getElementById('resultadoDolarMayorista2').innerHTML = Math.floor((dolarMayoristaInput / parseInt(mayorista))) + "$"
+        document.getElementById('resultadoDolarMayorista2').innerHTML = ((dolarMayoristaInput / parseInt(mayorista))).toFixed(2) + "$"
     }
 }
 
@@ -160,6 +160,6 @@ function euro2() {
         alert('Error de formato')
     } else {
         let euro = document.getElementById("formularioEuroOficial2").placeholder
-        document.getElementById('resultadoEuro2').innerHTML = Math.floor((EuroInput / parseInt(euro))) + "$"
+        document.getElementById('resultadoEuro2').innerHTML = ((EuroInput / parseInt(euro))).toFixed(2) + "$"
     }
 }
