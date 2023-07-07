@@ -7,187 +7,213 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
     <title>Dolar a Peso</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="d-flex">
-        <div class="card container mt-5" style="width: 18rem;">
-            <div class="col align-self-start ">
-                <form>
-                    <h3 class="m-2 p-1">Calculadora de <span style="color:green; font-size: xx-large;">dolar a peso</span></h3>
-                    <div class="form-row align-items-center">
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarBlue">Dolar blue</label>
-                            <input type="text" class="form-control mb-2 " id="formularioDolarBlue"
-                                placeholder="Cargando...">
-                            <div id="resultadoDolarBlue" class="card card-body" style="height: 20px;"></div>
-                            <div class="col">
-                                <button type="button" onclick="blue()" class="btn btn-primary mb-2 ">Blue</button>
-                            </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarOficial">Dolar Oficial</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioDolarOficial"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoDolarOficial" class="card card-body"
-                                style="height: 20px;">
-                            </div>
-                            <div class="col">
-                                <button type="button" onclick="oficial()" class="btn btn-primary mb-2 ">Oficial</button>
-                            </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarTarjeta">Dolar Tarjeta</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioDolarTarjeta"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoDolarTarjeta" class="card card-body d-inline-flex" style="height: 20px;">
-                            </div>
-                            <div class="col">
-                                <button type="button" onclick="tarjeta()" class="btn btn-primary mb-2 ">Dolar
-                                    Bolsa</button>
-                            </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarTurista">Dolar turista</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioDolarTurista"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoDolarTurista" class="card card-body d-inline-flex" style="height: 20px;">
-                            </div>
-                            <div class="col">
-                                <button type="button" onclick="turista()" class="btn btn-primary mb-2 ">Turista</button>
-                            </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarMayorista">Dolar Mayorista</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioDolarMayorista"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoDolarMayorista" class="card card-body d-inline-flex"
-                                style="height: 20px;">
-                            </div>
-                            <div class="col">
-                                <button type="button" onclick="mayorista()" class="btn btn-primary mb-2 ">Dolar</button>
-                            </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioEuroOficial">Euro Oficial</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioEuroOficial"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoEuro" class="card card-body" style="height: 20px;"></div>
-                            <div class="col">
-                                <button type="button" onclick="euro()" class="btn btn-primary mb-2 ">Dolar
-                                    Liqui</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <a class="navbar-brand" href="#">Dolar.exe</a>
+            <div>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calculadora.html">Calculadora</a>
+                    </li>
+                </ul>
             </div>
-        </div>
+        </nav>
+    </header>
 
-
-
-
-
-
-        <!-- /////////// -->
-        <div class="card container mt-5" style="width: 18rem;">
-            <div class="col align-self-start ">
-                <form>
-                    <h3 class="m-2 p-1">Calculadora de <span style="color:blue; font-size: xx-large;">peso a dolar</span></h3>
-                    <div class="form-row align-items-center">
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarBlue2">Dolar blue</label>
-                            <input type="text" class="form-control mb-2 " id="formularioDolarBlue2"
-                                placeholder="Cargando...">
-                            <div id="resultadoDolarBlue2" class="card card-body" style="height: 20px;"></div>
-                            <div class="col">
-                                <button type="button" onclick="blue2()" class="btn btn-primary mb-2 ">Blue</button>
+    <div class="p-3 m-5 bg-light bg-gradient shadow-lg  rounded">
+        <div class="col-md-10 p-4 m-4">
+            <div class="row ">
+                <div class="col-xl-5 col-lg-6">
+                    <div class="card l-bg-blue-dark">
+                        <div class="card-statistic-3 p-4 ">
+                            <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="mb-4">
+                                <h3 class="card-title mb-0">Dolar Blue</h3>
                             </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarOficial2">Dolar Oficial</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioDolarOficial2"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoDolarOficial2" class="card card-body"
-                                style="height: 20px;">
-                            </div>
-                            <div class="col">
-                                <button type="button" onclick="oficial2()"
-                                    class="btn btn-primary mb-2 ">Oficial</button>
-                            </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarTarjeta2">Dolar Tarjeta</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioDolarTarjeta2"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoDolarTarjeta2" class="card card-body d-inline-flex" style="height: 20px;">
-                            </div>
-                            <div class="col">
-                                <button type="button" onclick="tarjeta2()" class="btn btn-primary mb-2 ">Dolar
-                                    Bolsa</button>
-                            </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarTurista2">Dolar turista</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioDolarTurista2"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoDolarTurista2" class="card card-body d-inline-flex" style="height: 20px;">
-                            </div>
-                            <div class="col">
-                                <button type="button" onclick="turista2()"
-                                    class="btn btn-primary mb-2 ">Turista</button>
-                            </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioDolarMayorista2">Dolar Mayorista</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioDolarMayorista2"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoDolarMayorista2" class="card card-body d-inline-flex"
-                                style="height: 20px;">
-                            </div>
-                            <div class="col">
-                                <button type="button" onclick="mayorista2()"
-                                    class="btn btn-primary mb-2 ">Dolar</button>
-                            </div>
-                        </div>
-                        <div class="row container m-2 p-1 border border-secondary">
-                            <label class="sr-only" for="formularioEuroOficial2">Euro Oficial</label>
-                            <div class="input-group mb-2">
-                                <input type="text" class="form-control" id="formularioEuroOficial2"
-                                    placeholder="Cargando...">
-                            </div>
-                            <div id="resultadoEuro2" class="card card-body" style="height: 20px;"></div>
-                            <div class="col">
-                                <button type="button" onclick="euro2()" class="btn btn-primary mb-2 ">Dolar
-                                    Liqui</button>
+                            <div class="row align-items-lg-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h3 class="d-flex align-content-xl-center mb-0" id="CardBlueVenta">
+                                        Calculando
+                                    </h3>
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="d-flex align-items-center mb-0" id="CardBlueCompra">
+                                        Calculando
+                                    </h3>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="col-xl-5 col-lg-6">
+                    <div class="card l-bg-green-dark">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="mb-4">
+                                <h3 class="card-title mb-0">Dolar Oficial</h3>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h3 class="d-flex align-items-center mb-0" id="CardOficialV">
+                                        Cargando
+                                    </h3>
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="d-flex align-items-center mb-0" id="CardOficialC">
+                                        Cargando
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-xl-5 col-lg-6">
+                    <div class="card l-bg-cherry">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="mb-4">
+                                <h3 class="card-title mb-0">Dolar Turista</h3>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h3 class="d-flex align-items-center mb-0" id="CardTuristaV">
+                                        Cargando...
+                                    </h3>
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="d-flex align-items-center mb-0" id="CardTuristaC">
+                                        Cargando...
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-xl-5 col-lg-6">
+                    <div class="card l-bg-orange-dark">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="mb-4">
+                                <h3 class="card-title mb-0">Dolar Bolsa</h3>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h3 class="d-flex align-items-center mb-0" id="CardTarjetaV">
+                                        Cargando..
+                                    </h3>
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="d-flex align-items-center mb-0" id="CardTarjetaC">
+                                        Cargando...
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6">
+                    <div class="card l-bg-orange-dark">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="mb-4">
+                                <h3 class="card-title mb-0">Dolar Promedio</h3>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h3 class="d-flex align-items-center mb-0" id="CardPromedioV">
+                                        Cargando...
+                                    </h3>
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="d-flex align-items-center mb-0" id="CardPromedioC">
+                                        Cargando...
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6">
+                    <div class="card l-bg-orange-dark">
+                        <div class="card-statistic-3 p-4">
+                            <div class="card-icon card-icon-large"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="mb-4">
+                                <h5 class="card-title mb-0">Revenue Today</h5>
+                            </div>
+                            <div class="row align-items-center mb-2 d-flex">
+                                <div class="col-8">
+                                    <h2 class="d-flex align-items-center mb-0">
+                                        $11.61k
+                                    </h2>
+                                </div>
+                                <div class="col-4 text-right">
+                                    <span>2.5% <i class="fa fa-arrow-up"></i></span>
+                                </div>
+                            </div>
+                            <div class="progress mt-1 " data-height="8" style="height: 8px;">
+                                <div class="progress-bar l-bg-cyan" role="progressbar" data-width="25%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </body>
-<script src="script.js"></script>
+<script src="scriptIndex.js"></script>
+
 
 </html>

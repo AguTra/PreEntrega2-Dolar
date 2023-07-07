@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Dolar a Peso</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <a class="navbar-brand" href="#">Dolar.exe</a>
+            <div>
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="calculadora.html">Calculadora</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+    <div class="p-3 m-5 bg-light bg-gradient shadow-lg  rounded">
+        <div class="d-flex">
+            <div class="card container mt-5" style="width: 18rem;">
+                <div class="col align-self-start ">
+                    <form>
+                        <h3 class="m-2 p-1">Calculadora de <span style="color:green; font-size: xx-large;">dolar a
+                                peso</span></h3>
+                        <div class="form-row align-items-center">
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarBlue">Dolar blue</label>
+                                <input type="text" class="form-control mb-2 " id="formularioDolarBlue"
+                                    placeholder="Cargando...">
+                                <div id="resultadoDolarBlue" class="card card-body" style="height: 20px;"></div>
+                                <div class="col">
+                                    <button type="button" onclick="blue()" class="btn btn-primary mb-2 ">Blue</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarOficial">Dolar Oficial</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioDolarOficial"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoDolarOficial" class="card card-body" style="height: 20px;">
+                                </div>
+                                <div class="col">
+                                    <button type="button" onclick="oficial()"
+                                        class="btn btn-primary mb-2 ">Oficial</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarTarjeta">Dolar Tarjeta</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioDolarTarjeta"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoDolarTarjeta" class="card card-body d-inline-flex"
+                                    style="height: 20px;">
+                                </div>
+                                <div class="col">
+                                    <button type="button" onclick="tarjeta()" class="btn btn-primary mb-2 ">Dolar
+                                        Bolsa</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarTurista">Dolar turista</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioDolarTurista"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoDolarTurista" class="card card-body d-inline-flex"
+                                    style="height: 20px;">
+                                </div>
+                                <div class="col">
+                                    <button type="button" onclick="turista()"
+                                        class="btn btn-primary mb-2 ">Turista</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarMayorista">Dolar Mayorista</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioDolarMayorista"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoDolarMayorista" class="card card-body d-inline-flex"
+                                    style="height: 20px;">
+                                </div>
+                                <div class="col">
+                                    <button type="button" onclick="mayorista()"
+                                        class="btn btn-primary mb-2 ">Dolar</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioEuroOficial">Euro Oficial</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioEuroOficial"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoEuro" class="card card-body" style="height: 20px;"></div>
+                                <div class="col">
+                                    <button type="button" onclick="euro()" class="btn btn-primary mb-2 ">Dolar
+                                        Liqui</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- /////////// -->
+            <div class="card container mt-5" style="width: 18rem;">
+                <div class="col align-self-start ">
+                    <form>
+                        <h3 class="m-2 p-1">Calculadora de <span style="color:blue; font-size: xx-large;">peso a
+                                dolar</span></h3>
+                        <div class="form-row align-items-center">
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarBlue2">Dolar blue</label>
+                                <input type="text" class="form-control mb-2 " id="formularioDolarBlue2"
+                                    placeholder="Cargando...">
+                                <div id="resultadoDolarBlue2" class="card card-body" style="height: 20px;"></div>
+                                <div class="col">
+                                    <button type="button" onclick="blue2()" class="btn btn-primary mb-2">Blue</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarOficial2">Dolar Oficial</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioDolarOficial2"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoDolarOficial2" class="card card-body" style="height: 20px;">
+                                </div>
+                                <div class="col">
+                                    <button type="button" onclick="oficial2()"
+                                        class="btn btn-primary mb-2 ">Oficial</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarTarjeta2">Dolar Tarjeta</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioDolarTarjeta2"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoDolarTarjeta2" class="card card-body d-inline-flex"
+                                    style="height: 20px;">
+                                </div>
+                                <div class="col">
+                                    <button type="button" onclick="tarjeta2()" class="btn btn-primary mb-2 ">Dolar
+                                        Bolsa</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarTurista2">Dolar turista</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioDolarTurista2"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoDolarTurista2" class="card card-body d-inline-flex"
+                                    style="height: 20px;">
+                                </div>
+                                <div class="col">
+                                    <button type="button" onclick="turista2()"
+                                        class="btn btn-primary mb-2 ">Turista</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioDolarMayorista2">Dolar Mayorista</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioDolarMayorista2"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoDolarMayorista2" class="card card-body d-inline-flex"
+                                    style="height: 20px;">
+                                </div>
+                                <div class="col">
+                                    <button type="button" onclick="mayorista2()"
+                                        class="btn btn-primary mb-2 ">Dolar</button>
+                                </div>
+                            </div>
+                            <div class="row container m-2 p-1 border border-secondary">
+                                <label class="sr-only" for="formularioEuroOficial2">Euro Oficial</label>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" id="formularioEuroOficial2"
+                                        placeholder="Cargando...">
+                                </div>
+                                <div id="resultadoEuro2" class="card card-body" style="height: 20px;"></div>
+                                <div class="col">
+                                    <button type="button" onclick="euro2()" class="btn btn-primary mb-2 ">Dolar
+                                        Liqui</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="scriptCalculadora.js"></script>
+
+</html>

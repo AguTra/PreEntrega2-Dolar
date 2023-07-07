@@ -12,10 +12,14 @@ fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
         data = responseData;
         console.log(data);
         dolaresHoy(data);
+        let jsonstringy = JSON.stringify(data)
+        let juan = localStorage.setItem('pepeData',jsonstringy)
+        
     })
     .catch(error => {
         console.log(error);
     });
+
 
 
 function dolaresHoy(data) {
@@ -36,11 +40,18 @@ function dolaresHoy(data) {
     let mayorista = [document.getElementById('formularioDolarMayorista').placeholder = (Dolars.mayoristia), document.getElementById('formularioDolarMayorista2').placeholder = (Dolars.mayoristia)]
     let euro = [document.getElementById('formularioEuroOficial').placeholder = (Dolars.euro), document.getElementById('formularioEuroOficial2').placeholder = (Dolars.euro)]
 
+
 }
 
 
 ///////////////////////////////////
-
+function verDolares(){
+    let dolar = localStorage.getItem('pepeData')
+    let trans = JSON.stringify(dolar)
+    let trans2 = JSON.parse(trans)
+    console.log(trans2[0])
+    
+}
 
 
 function blue() {
