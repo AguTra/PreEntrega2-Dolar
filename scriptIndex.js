@@ -58,6 +58,9 @@ let cardTarjetaC = document.getElementById("CardTarjetaC").innerHTML = (Dolars.t
 
 let cardPromedioV = document.getElementById("CardPromedioV").innerHTML = (Dolars.mayoristiaV + ' '+ "Venta")
 let cardPromedioC = document.getElementById("CardPromedioC").innerHTML = (Dolars.mayosristaC + ' '+ "Compra")
+
+let cardSojaV = document.getElementById("CardSojaV").innerHTML = (Dolars.euroV + ' '+ "Venta")
+let cardSojaC = document.getElementById("CardSojaC").innerHTML = (Dolars.euroC + ' '+ "Compra")
 }
 
 //        <nav class="navbar navbar-expand-lg p-3 mb-2 bg-success bg-gradient text-white">
