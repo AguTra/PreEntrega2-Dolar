@@ -1,4 +1,3 @@
-let data;
 
 fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
     .then(response => {
@@ -71,9 +70,9 @@ function dolaresHoy(data) {
 
 am4core.ready(function () {
     // Crea una instancia del gráfico
-    var chart = am4core.create("chartdiv", am4charts.XYChart);
+    let chart = am4core.create("chartdiv", am4charts.XYChart);
 
-    var requestOptions = {
+    let requestOptions = {
         method: 'GET',
         redirect: 'follow',
     };
@@ -94,15 +93,16 @@ am4core.ready(function () {
 
 
 
-    var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
-    var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
 
-    var series = chart.series.push(new am4charts.LineSeries());
+    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+    let series = chart.series.push(new am4charts.LineSeries());
     series.dataFields.dateX = "date";
     series.dataFields.valueY = "value_sell";
 
-    series.strokeWidth = 4;
-    series.minBulletDistance = 15;
+    series.strokeWidth = 1;
+    series.minBulletDistance = 1;
     series.tooltipText = "Blue: [bold]{valueY}[/]";
 
     chart.cursor = new am4charts.XYCursor();
@@ -121,4 +121,3 @@ am4core.ready(function () {
 
 
 });
-
