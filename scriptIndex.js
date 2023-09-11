@@ -1,3 +1,21 @@
+fetch('https://api.bluelytics.com.ar/v2/latest')
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Error en la solicitud');
+        }
+    })
+    .then(responseData => {
+        data2 = responseData;
+        console.log(data2)
+        dolaresHoy2(data2);
+
+
+    })
+    .catch(error => {
+        console.log(error);
+    });
 
 fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
     .then(response => {
@@ -18,15 +36,30 @@ fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
         console.log(error);
     });
 
+    function dolaresHoy2(data2){
+        const Dolares = {
+            oficialV: data2["oficial"].value_sell ,
+            oficialC: data2["oficial"].value_buy,
+            blueV: data2["blue"].value_sell,
+            blueC: data2["blue"].value_buy,
+        }
+    let cardBlueV = document.getElementById("CardBlueVenta").innerHTML = (Dolares.blueV + ' ' + 'Venta')
+    let cardBlueC = document.getElementById("CardBlueCompra").innerHTML = (Dolares.blueC + ' ' + "Compra")
+
+    let cardOficialV = document.getElementById("CardOficialV").innerHTML = (Dolares.oficialV + ' ' + "Venta")
+    let cardOficialC = document.getElementById("CardOficialC").innerHTML = (Dolares.oficialC + ' ' + "Compra")
+    
+    }
 
 
 
 function dolaresHoy(data) {
+    
     const Dolars = {
-        oficialV: data[0].casa.venta,
-        oficialC: data[0].casa.compra,
-        blueV: data[1].casa.venta,
-        blueC: data[1].casa.compra,
+        // oficialV: data2["blue"],
+        // oficialC: data2["blue"],
+        // blueV: data[1].casa.venta,
+        // blueC: data[1].casa.compra,
         turistaV: data[6].casa.venta,
         turistaC: data[6].casa.compra,
         tarjetaV: data[4].casa.venta,
@@ -44,11 +77,6 @@ function dolaresHoy(data) {
     }
     console.log(Dolars)
 
-    let cardBlueV = document.getElementById("CardBlueVenta").innerHTML = (Dolars.blueV + ' ' + 'Venta')
-    let cardBlueC = document.getElementById("CardBlueCompra").innerHTML = (Dolars.blueC + ' ' + "Compra")
-
-    let cardOficialV = document.getElementById("CardOficialV").innerHTML = (Dolars.oficialV + ' ' + "Venta")
-    let cardOficialC = document.getElementById("CardOficialC").innerHTML = (Dolars.oficialC + ' ' + "Compra")
 
     let cardTuristaV = document.getElementById("CardTuristaV").innerHTML = (Dolars.turistaV + ' ' + "Venta")
     let cardTuristaC = document.getElementById("CardTuristaC").innerHTML = (Dolars.turistaC + ' ')

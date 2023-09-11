@@ -15,12 +15,36 @@ fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
         console.log(error);
     });
 
+fetch('https://api.bluelytics.com.ar/v2/latest')
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Error en la solicitud');
+        }
+    })
+    .then(responseData => {
+        data2 = responseData;
+        console.log(data2)
+        dolaresHoy2(data2);
 
+
+    })
+    .catch(error => {
+        console.log(error);
+    });
+
+function dolaresHoy2(data2) {
+    const Dolares = {
+        oficialV: data2["oficial"].value_sell,
+        blueV: data2["blue"].value_sell,
+    }
+    let oficial = [document.getElementById('formularioDolarOficial').placeholder = (Dolares.oficialV), document.getElementById('formularioDolarOficial2').placeholder = (Dolares.oficialV), document.getElementById('oficial2').innerHTML = (Dolares.oficialV), document.getElementById('oficial').innerHTML = (Dolares.oficialV)]
+    let blue = [document.getElementById('formularioDolarBlue').placeholder = (Dolares.blueV), document.getElementById('formularioDolarBlue2').placeholder = (Dolares.blueV), document.getElementById('blue2').innerHTML = (Dolares.blueV), document.getElementById('blue').innerHTML = (Dolares.blueV)]
+}
 
 function dolaresHoy(data) {
     const Dolars = {
-        oficial: data[0].casa.venta,
-        blue: data[1].casa.venta,
         turista: data[6].casa.venta,
         tarjeta: data[4].casa.venta,
         mayoristia: data[7].casa.venta,
@@ -28,8 +52,6 @@ function dolaresHoy(data) {
 
     }
     console.log(Dolars)
-    let oficial = [document.getElementById('formularioDolarOficial').placeholder = (Dolars.oficial), document.getElementById('formularioDolarOficial2').placeholder = (Dolars.oficial), document.getElementById('oficial2').innerHTML = (Dolars.oficial), document.getElementById('oficial').innerHTML = (Dolars.oficial)]
-    let blue = [document.getElementById('formularioDolarBlue').placeholder = (Dolars.blue), document.getElementById('formularioDolarBlue2').placeholder = (Dolars.blue), document.getElementById('blue2').innerHTML = (Dolars.blue), document.getElementById('blue').innerHTML = (Dolars.blue)]
     let tarjeta = [document.getElementById('formularioDolarTarjeta').placeholder = (Dolars.tarjeta), document.getElementById('formularioDolarTarjeta2').placeholder = (Dolars.tarjeta), document.getElementById('tarjeta2').innerHTML = (Dolars.tarjeta), document.getElementById('tarjeta').innerHTML = (Dolars.tarjeta)]
     let turista = [document.getElementById('formularioDolarTurista').placeholder = (Dolars.turista), document.getElementById('formularioDolarTurista2').placeholder = (Dolars.turista), document.getElementById('turista2').innerHTML = (Dolars.turista), document.getElementById('turista').innerHTML = (Dolars.turista)]
     let mayorista = [document.getElementById('formularioDolarMayorista').placeholder = (Dolars.mayoristia), document.getElementById('formularioDolarMayorista2').placeholder = (Dolars.mayoristia), document.getElementById('mayorista2').innerHTML = (Dolars.mayoristia), document.getElementById('mayorista').innerHTML = (Dolars.mayoristia)]
@@ -82,7 +104,7 @@ function tarjeta() {
     } else {
         let tarjeta = document.getElementById("formularioDolarTarjeta").placeholder
         document.getElementById('resultadoDolarTarjeta').innerHTML = (dolarTarjetaInput * parseInt(tarjeta)) + "$"
-    } 
+    }
 }
 
 function turista() {
